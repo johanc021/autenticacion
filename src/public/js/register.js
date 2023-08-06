@@ -17,8 +17,11 @@ form.addEventListener('submit', e => {
         .then(json => {
             // Verificar si el registro fue exitoso antes de redirigir
             if (json.status === "success") {
-                // Redirigir al usuario a la página de inicio de sesión
-                window.location.replace('/login');
+                console.log(json)
+                // tiempo de 3 segundos y redirigir al usuario a la página de inicio de sesión
+                setTimeout(() => {
+                    window.location.replace('/login');
+                }, 3000);
             } else {
                 console.log(json);
             }
